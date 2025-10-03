@@ -1,28 +1,10 @@
-/**
- * DEPLOYMENT SCRIPT EXPLANATION FOR BEGINNERS
- * 
- * This script deploys our SimpleMarket contract to the blockchain.
- * Think of deployment like publishing your website - once deployed,
- * people can interact with your smart contract.
- * 
- * WHAT HAPPENS DURING DEPLOYMENT:
- * 1. Compile the contract (convert Solidity to bytecode)
- * 2. Send the bytecode to the blockchain
- * 3. Blockchain assigns an address to your contract
- * 4. People can now interact with your contract using this address
- */
-
 const hre = require("hardhat");
 
 async function main() {
   console.log("🚀 Starting deployment process...\n");
-
-  // ==================== GET DEPLOYER ACCOUNT ====================
   
   /**
-   * Get the account that will deploy the contract
-   * This account pays the gas fees for deployment
-   * In local development, Hardhat provides test accounts with fake ETH
+   * In local development, Hardhat provides test accounts with ETH
    */
   const [deployer] = await hre.ethers.getSigners();
   
@@ -35,8 +17,6 @@ async function main() {
   console.log("Network:", hre.network.name);
   console.log("─────────────────────────────────────────────────\n");
 
-  // ==================== DEPLOY THE CONTRACT ====================
-  
   /**
    * DEPLOYMENT PROCESS:
    * 1. Get the contract factory (template for creating contract instances)
@@ -64,8 +44,6 @@ async function main() {
   console.log("✅ SimpleMarket deployed successfully!");
   console.log("📍 Contract Address:", contractAddress);
   console.log("─────────────────────────────────────────────────\n");
-
-  // ==================== VERIFY DEPLOYMENT ====================
   
   /**
    * Let's verify the deployment by calling a simple function
@@ -90,8 +68,6 @@ async function main() {
   
   console.log("─────────────────────────────────────────────────\n");
 
-  // ==================== SAVE DEPLOYMENT INFO ====================
-  
   /**
    * Save important deployment information to a file
    * The frontend will need the contract address to interact with it
@@ -123,8 +99,6 @@ async function main() {
   
   console.log("💾 Deployment info saved to frontend/src/contracts/deploymentInfo.json");
   
-  // ==================== COPY CONTRACT ABI ====================
-  
   /**
    * ABI (Application Binary Interface) is like a manual that tells
    * the frontend how to interact with our smart contract.
@@ -155,8 +129,7 @@ async function main() {
     console.log("⚠️  Warning: Could not copy ABI file:", error.message);
   }
   
-  // ==================== DEPLOYMENT SUMMARY ====================
-  
+// when deployment is done, show the following:
   console.log("\n🎉 DEPLOYMENT COMPLETE!");
   console.log("═══════════════════════════════════════════════════");
   console.log("📍 Contract Address:", contractAddress);
