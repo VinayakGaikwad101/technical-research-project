@@ -9,7 +9,6 @@ const Header = ({ account, onDisconnect }) => {
   const [network, setNetwork] = useState({ correct: false, name: 'Unknown' });
   const [loading, setLoading] = useState(false);
 
-  
   /**
    * Load account balance and network info when account changes
    */
@@ -46,7 +45,6 @@ const Header = ({ account, onDisconnect }) => {
     }
   };
 
-  // ==================== EVENT HANDLERS ====================
   
   /**
    * Handle disconnect button click
@@ -66,7 +64,6 @@ const Header = ({ account, onDisconnect }) => {
     }
   };
 
-  // ==================== RENDER COMPONENT ====================
   
   return (
     <header className="header">

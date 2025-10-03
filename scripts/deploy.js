@@ -151,8 +151,6 @@ async function main() {
   console.log("- Deploy again: npx hardhat run scripts/deploy.js --network localhost");
 }
 
-// ==================== ERROR HANDLING ====================
-
 /**
  * Handle any errors that occur during deployment
  * This ensures we get helpful error messages if something goes wrong
@@ -179,7 +177,6 @@ main()
   });
 
 /**
- * ==================== DEPLOYMENT SCRIPT SUMMARY ====================
  * 
  * This script does the following:
  * 

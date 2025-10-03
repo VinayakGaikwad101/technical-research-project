@@ -1,30 +1,8 @@
-/**
- * ADD PRODUCT COMPONENT
- * 
- * This component provides a form for users to add new products to the marketplace.
- * It handles form validation, Web3 transactions, and user feedback.
- * 
- * FEATURES:
- * - Product form with validation
- * - ETH price input with conversion
- * - Transaction handling
- * - Loading states
- * - Error handling
- * - Form reset after success
- * 
- * BEGINNER CONCEPTS:
- * - Form handling in React
- * - Input validation
- * - State management
- * - Event handling
- * - Smart contract interaction
- */
 
 import { useState } from 'react';
 import { ethToWei, formatEth } from '../utils/web3Utils';
 
 const AddProduct = ({ contract, account, onProductAdded, onCancel }) => {
-  // ==================== STATE MANAGEMENT ====================
   
   const [formData, setFormData] = useState({
     name: '',
@@ -36,7 +14,6 @@ const AddProduct = ({ contract, account, onProductAdded, onCancel }) => {
   const [error, setError] = useState('');
   const [validationErrors, setValidationErrors] = useState({});
 
-  // ==================== FORM VALIDATION ====================
   
   /**
    * Validate form inputs
@@ -80,7 +57,6 @@ const AddProduct = ({ contract, account, onProductAdded, onCancel }) => {
     return Object.keys(errors).length === 0;
   };
 
-  // ==================== EVENT HANDLERS ====================
   
   /**
    * Handle input changes
@@ -188,7 +164,6 @@ const AddProduct = ({ contract, account, onProductAdded, onCancel }) => {
     setError('');
   };
 
-  // ==================== RENDER HELPERS ====================
   
   /**
    * Render input field with validation
@@ -252,7 +227,6 @@ const AddProduct = ({ contract, account, onProductAdded, onCancel }) => {
     </div>
   );
 
-  // ==================== MAIN RENDER ====================
   
   return (
     <div className="add-product">
@@ -396,49 +370,3 @@ const AddProduct = ({ contract, account, onProductAdded, onCancel }) => {
 };
 
 export default AddProduct;
-
-/**
- * ==================== COMPONENT SUMMARY ====================
- * 
- * The AddProduct component provides:
- * 
- * 1. FORM HANDLING:
- *    - Controlled inputs with state management
- *    - Real-time validation
- *    - Character counting
- *    - Form reset functionality
- * 
- * 2. VALIDATION:
- *    - Required field validation
- *    - Length constraints
- *    - Price validation
- *    - Real-time error feedback
- * 
- * 3. SMART CONTRACT INTEGRATION:
- *    - Calls addProduct function
- *    - Handles transaction states
- *    - Converts ETH to Wei
- *    - Error handling for contract calls
- * 
- * 4. USER EXPERIENCE:
- *    - Loading states during transactions
- *    - Clear error messages
- *    - Success feedback
- *    - Help and tips
- * 
- * 5. ACCESSIBILITY:
- *    - Proper form labels
- *    - Error announcements
- *    - Keyboard navigation
- *    - Screen reader support
- * 
- * BEGINNER CONCEPTS DEMONSTRATED:
- * - Form state management
- * - Input validation patterns
- * - Event handling
- * - Conditional rendering
- * - Smart contract interaction
- * - Error handling strategies
- * - User feedback patterns
- * - Component lifecycle
- */

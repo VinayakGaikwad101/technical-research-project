@@ -1,25 +1,3 @@
-/**
- * PRODUCT CARD COMPONENT
- * 
- * This component displays a single product in a card format.
- * It shows product details and provides purchase functionality.
- * 
- * FEATURES:
- * - Product information display
- * - Buy button with loading state
- * - Seller information
- * - Price formatting
- * - Status indicators
- * - Responsive design
- * 
- * BEGINNER CONCEPTS:
- * - Component props
- * - Conditional rendering
- * - Event handling
- * - CSS classes
- * - Data formatting
- */
-
 import { weiToEth, formatAddress, formatEth } from '../utils/web3Utils';
 
 const ProductCard = ({ 
@@ -31,7 +9,6 @@ const ProductCard = ({
   isOwner = false,
   isSold = false 
 }) => {
-  // ==================== DATA FORMATTING ====================
   
   /**
    * Format product price for display
@@ -74,7 +51,6 @@ const ProductCard = ({
     return null;
   };
 
-  // ==================== EVENT HANDLERS ====================
   
   /**
    * Handle buy button click
@@ -98,7 +74,6 @@ const ProductCard = ({
     }
   };
 
-  // ==================== RENDER HELPERS ====================
   
   /**
    * Render product status badge
@@ -170,7 +145,6 @@ const ProductCard = ({
     return null;
   };
 
-  // ==================== MAIN RENDER ====================
   
   return (
     <div className={`product-card ${getCardStatusClass()}`}>
@@ -257,46 +231,3 @@ const ProductCard = ({
 };
 
 export default ProductCard;
-
-/**
- * ==================== COMPONENT SUMMARY ====================
- * 
- * The ProductCard component provides:
- * 
- * 1. PRODUCT DISPLAY:
- *    - Product name and description
- *    - Price in ETH (converted from Wei)
- *    - Seller address (formatted)
- *    - Product ID and status
- * 
- * 2. VISUAL STATES:
- *    - Available products (green theme)
- *    - Sold products (gray theme)
- *    - Owner's products (blue theme)
- *    - Status badges and indicators
- * 
- * 3. INTERACTIONS:
- *    - Buy button with loading state
- *    - Seller address click-to-copy
- *    - Hover effects and tooltips
- * 
- * 4. RESPONSIVE DESIGN:
- *    - Card layout that works on all screens
- *    - Flexible content areas
- *    - Clear visual hierarchy
- * 
- * 5. ACCESSIBILITY:
- *    - Proper button states
- *    - Descriptive text
- *    - Keyboard navigation support
- * 
- * BEGINNER CONCEPTS DEMONSTRATED:
- * - Props destructuring
- * - Conditional rendering
- * - CSS class manipulation
- * - Event handling
- * - Data formatting
- * - Component composition
- * - State-based styling
- * - User feedback patterns
- */
