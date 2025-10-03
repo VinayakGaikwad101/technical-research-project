@@ -1,39 +1,12 @@
-/**
- * SMART CONTRACT TESTING GUIDE FOR BEGINNERS
- * 
- * Testing smart contracts is EXTREMELY important because:
- * 1. Once deployed, contracts can't be easily changed
- * 2. Bugs can lead to loss of real money
- * 3. Testing helps catch issues before deployment
- * 
- * WHAT WE'RE TESTING:
- * - Contract deployment
- * - Adding products
- * - Buying products
- * - Error conditions
- * - Edge cases
- * 
- * TESTING FRAMEWORK:
- * - Mocha: Test runner (organizes and runs tests)
- * - Chai: Assertion library (checks if things are correct)
- * - Hardhat: Ethereum testing environment
- */
+
 
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-/**
- * DESCRIBE BLOCKS: Group related tests together
- * Think of them like folders organizing your tests
- */
+
 describe("SimpleMarket Contract", function () {
   
-  // ==================== TEST SETUP ====================
   
-  /**
-   * These variables will be used across all tests
-   * We declare them here so all test functions can access them
-   */
   let SimpleMarket;      // Contract factory
   let simpleMarket;      // Deployed contract instance
   let owner;             // Contract deployer
@@ -41,12 +14,7 @@ describe("SimpleMarket Contract", function () {
   let buyer;             // Test buyer account
   let otherAccount;      // Additional test account
   
-  /**
-   * BEFORE EACH TEST:
-   * This function runs before every individual test
-   * It sets up a fresh contract instance for each test
-   * This ensures tests don't interfere with each other
-   */
+  
   beforeEach(async function () {
     console.log("    🔄 Setting up test environment...");
     
@@ -64,12 +32,7 @@ describe("SimpleMarket Contract", function () {
     console.log("    ✅ Fresh contract deployed for test");
   });
 
-  // ==================== DEPLOYMENT TESTS ====================
-  
-  /**
-   * Test that the contract deploys correctly
-   * This is the foundation - if deployment fails, nothing else works
-   */
+
   describe("Deployment", function () {
     
     it("Should deploy with correct initial values", async function () {
@@ -91,12 +54,6 @@ describe("SimpleMarket Contract", function () {
     });
   });
 
-  // ==================== ADD PRODUCT TESTS ====================
-  
-  /**
-   * Test the addProduct function
-   * This is core functionality - sellers need to add products
-   */
   describe("Adding Products", function () {
     
     it("Should add a product successfully", async function () {
@@ -199,12 +156,7 @@ describe("SimpleMarket Contract", function () {
     });
   });
 
-  // ==================== BUY PRODUCT TESTS ====================
-  
-  /**
-   * Test the buyProduct function
-   * This is the core transaction functionality
-   */
+
   describe("Buying Products", function () {
     
     // Add a test product before each buy test
@@ -334,11 +286,7 @@ describe("SimpleMarket Contract", function () {
     });
   });
 
-  // ==================== VIEW FUNCTION TESTS ====================
-  
-  /**
-   * Test functions that read data from the contract
-   */
+
   describe("View Functions", function () {
     
     beforeEach(async function () {
@@ -467,43 +415,3 @@ describe("SimpleMarket Contract", function () {
     });
   });
 });
-
-/**
- * ==================== TESTING SUMMARY ====================
- * 
- * This test suite covers:
- * 
- * 1. DEPLOYMENT TESTING:
- *    - Contract deploys correctly
- *    - Initial state is correct
- * 
- * 2. FUNCTIONALITY TESTING:
- *    - Adding products works
- *    - Buying products works
- *    - View functions work
- * 
- * 3. ERROR HANDLING:
- *    - Invalid inputs are rejected
- *    - Business rules are enforced
- * 
- * 4. EVENT TESTING:
- *    - Events are emitted correctly
- *    - Event parameters are correct
- * 
- * 5. EDGE CASES:
- *    - Extreme values
- *    - Unusual scenarios
- * 
- * RUNNING TESTS:
- * - Run all tests: npx hardhat test
- * - Run specific test: npx hardhat test test/SimpleMarket.test.js
- * - Run with gas reporting: REPORT_GAS=true npx hardhat test
- * 
- * GOOD TESTING PRACTICES:
- * - Test both success and failure cases
- * - Use descriptive test names
- * - Test edge cases and extreme values
- * - Verify events are emitted
- * - Check state changes
- * - Test access control
- */
