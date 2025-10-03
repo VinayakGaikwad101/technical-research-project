@@ -1,13 +1,11 @@
-# Sample Hardhat Project
+# Technical Research Blockchain Project (Vinayak Gaikwad and Vedant Khete)
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This project is for the subject "Technical Research", showcasing blockchain technology for de-centralized transactions using smart contracts deployed over the blockchain network
 
-Try running some of the following tasks:
+Below are a few commands for specific purposes:
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
+npx hardhat test # to test the smart contracts
+npx hardhat node # to create 20 instances of a local blockchain network, to facilitate transactions in ETH (10000 in each instance)
+npx hardhat run scripts/deploy.js --network localhost # to deploy the project on a local blockchain (localhost)
 ```
