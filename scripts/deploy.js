@@ -176,37 +176,3 @@ main()
     process.exit(1);
   });
 
-/**
- * 
- * This script does the following:
- * 
- * 1. PREPARATION:
- *    - Gets the deployer account
- *    - Checks account balance
- *    - Shows network information
- * 
- * 2. DEPLOYMENT:
- *    - Compiles the SimpleMarket contract
- *    - Deploys it to the blockchain
- *    - Waits for confirmation
- *    - Gets the contract address
- * 
- * 3. VERIFICATION:
- *    - Tests basic contract functions
- *    - Ensures deployment was successful
- * 
- * 4. SETUP FOR FRONTEND:
- *    - Saves contract address and ABI
- *    - Creates necessary files for frontend integration
- * 
- * 5. REPORTING:
- *    - Shows deployment summary
- *    - Provides next steps
- *    - Gives helpful commands
- * 
- * BEGINNER TIPS:
- * - Always deploy to local network first for testing
- * - Keep track of contract addresses
- * - Save gas by testing thoroughly before mainnet deployment
- * - Use version control to track deployments
- */
